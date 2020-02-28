@@ -1,0 +1,36 @@
+<app-manager-sidebar></app-manager-sidebar>
+
+<form class="form-signin" #userForm ="ngForm" (ngSubmit)="onSubmit()" novalidate>
+    <img src="assets/img/cupslogo2.png" alt="Cups Logo" width="220" height="220">
+    <h1 class="h3 mb-3 font-weight-normal">Add Item</h1>
+
+    <div class="form-group">
+        <label>Item Name</label>
+        <input type="text" name="fName" class="form-control" 
+        #name="ngModel" placeholder="Espresso" required autofocus [(ngModel)]="itemModel.name">
+    </div>
+
+    <div class="form-group">
+        <label>Item Cost</label>
+        <input type="text" name="cost" class="form-control" 
+        #name="ngModel" placeholder="6.99" required autofocus [(ngModel)]="itemModel.cost">
+    </div>
+
+    <div class="form-group">
+        <label>Item Stock</label>
+        <input type="text" name="stock" class="form-control" 
+        #name="ngModel" placeholder="10" required autofocus [(ngModel)]="itemModel.stock">
+    </div>
+
+    <div class="form-group">
+        <label>Item ID</label>
+        <input type="text" name="id" class="form-control" 
+        #name="ngModel" placeholder="100" required autofocus [(ngModel)]="itemModel.id">
+    </div>
+    
+    <div class="checkbox mb-3">
+     
+    </div>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Add Item</button>
+  </form>    
+
