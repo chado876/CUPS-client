@@ -1,0 +1,63 @@
+<app-customer-sidebar></app-customer-sidebar>
+
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+      <h1 class="h2">Customer Page</h1>
+    </div>
+    <h4 class="align">Welcome {{customerModel.fname}}</h4>
+    <br>
+<!-- Search form -->
+<br><br>
+<form class="form-inline">
+  <button id="searchbutton" (click)="search(searchBox2.value)"><i class="fa fa-search" aria-hidden="true"></i></button>
+  <input class="form-control form-control-sm ml-3 w-75" #searchBox2 id="searchbox2" type="text" placeholder="Search"
+    aria-label="Search">
+</form>
+
+<div id="search-component">
+  <h4><label for="search-box">Item Search</label></h4>
+</div>
+
+<div id="Item Listing" *ngIf ="!loaded">
+    <app-itemlisting></app-itemlisting>
+</div>
+
+<div id="searchContent" *ngIf="loaded"> 
+  
+<div  class="row">
+  <div class="col-sm-6">
+      <div class="card text-center" style="width:300px">
+          <div class="card-header">
+            {{item.name}} ({{item.category}})
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">{{item.cost}}</h5>
+            <img src="{{item.url}}" class="card-img-middle" height="240" width="240">
+          </div>
+          <div class="card-footer text-muted">
+            {{item.stock}}
+          </div>
+        </div>
+        <br><br>
+        
+  </div> 
+
+  <div  class="row">
+    <div class="col-sm-6">
+        <div class="card text-center" style="width:300px">
+            <div class="card-header">
+              American Sign Language for {{item.name}} 
+            </div>
+            <div class="card-body">
+            <img src="{{item.asl}}" class="card-img-middle" height="240" width="240">
+            </div>
+            <div class="card-footer text-muted">
+            </div>
+          </div>
+          <br><br>
+          
+    </div>
+</div> 
+</div> 
+
+  

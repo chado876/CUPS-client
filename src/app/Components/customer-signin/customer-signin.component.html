@@ -1,0 +1,38 @@
+
+<form class="form-signin" #userForm ="ngForm" (ngSubmit)="login()" novalidate>
+  <img src="assets/img/cupslogo2.png" alt="Cups Logo" width="220" height="220">
+  <h1 class="h3 mb-3 font-weight-normal">Sign In</h1>
+  
+  <div class="form-group">
+      <label>First Name</label>
+      <input type="text" name="fName" class="form-control" 
+      #name="ngModel"  required autofocus [(ngModel)]="customerModel.fname">
+  </div>
+
+  <div class="form-group">
+      <label>Last Name</label>
+      <input type="text" name="lName" class="form-control" 
+      #name="ngModel"  required autofocus [(ngModel)]="customerModel.lname">
+  </div>
+
+
+  <div class="form-group">
+      <label>Digital ID</label>
+      <label>Passcode:</label>
+      <input type="text" name="dID" class="form-control" 
+      #name="ngModel" placeholder="Digital ID" required autofocus [(ngModel)]="customerModel.d_id">
+      <label>Recording:</label>
+      <input type="text" name="recording" class="form-control" 
+      #name="ngModel" placeholder="Digital ID" required autofocus [(ngModel)]="customerModel.recording">
+      <label>Image:</label>
+      <input type="text" name="image" class="form-control" 
+      #name="ngModel" placeholder="Digital ID" required autofocus [(ngModel)]="customerModel.image">
+  </div>
+  
+  <div class="checkbox mb-3">
+   
+  </div>
+  <button class="btn btn-lg btn-primary btn-block" type="submit">Sign In</button>
+  <p><a routerLink="../customer-signup">Not a member? Click here to Sign Up</a></p>
+</form>    
+

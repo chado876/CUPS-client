@@ -1,0 +1,39 @@
+<div *ngIf="item">
+    <h2>{{item.name | uppercase}} Details</h2>
+    <div><span>id: </span>{{item.id}}</div>
+    <div>
+      <label>name:
+        <input [(ngModel)]="item.name" placeholder="{{ item.name }}"/>
+      </label>
+      </div>
+      <div>
+        <label>Category:
+            <!-- <select [(ngModel)]="itemModel.category" name="category"> -->
+                <!-- <option *ngFor="let category of categories" [ngValue]="category">{{category}}</option></select> -->
+          <input [(ngModel)]="item.name" placeholder="{{ item.category }}"/>
+        </label>
+    </div>
+        <div>
+      <label>Cost:
+        <input [(ngModel)]="item.cost" placeholder="{{ item.cost }}"/>
+      </label>
+    </div>
+    <div>
+        <label>Stock:
+          <input [(ngModel)]="item.stock" placeholder="{{ item.stock }}"/>
+        </label>
+      </div>
+      <div>
+        <label>image url:
+          <input [(ngModel)]="item.url" placeholder="{{ item.url }}"/>
+        </label>
+      </div>
+      <div>
+        <label>item asl:
+          <input [(ngModel)]="item.asl" placeholder="{{ item.asl }}"/>
+        </label>
+      </div>
+
+    <button (click)="goBack()">go back</button>
+    <button (click)="save()">save</button>
+  </div>

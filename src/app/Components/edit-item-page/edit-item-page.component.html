@@ -1,0 +1,95 @@
+<app-manager-sidebar></app-manager-sidebar>
+
+<div class="d-flex justify-content-center" *ngIf="!loaded">
+  <div class="spinner-border" role="status" id="spinner">
+    <span class="sr-only">Loading...</span>
+  </div>
+</div>
+<!-- 
+       <div class="d-flex justify-content-center" *ngIf="!loaded">
+        <app-coffeeanimation></app-coffeeanimation>
+         <h3>Brewing items...</h3> 
+        </div>  -->
+
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+      <h1 class="h2">Edit Item </h1>
+    </div>
+
+    <!-- <input type="text" #searchBox id="search-box">
+      <button type="submit" (click)="search(searchBox.value)"><i class="fa fa-search"></i></button> -->
+
+      <ng-container *ngIf="listingView">
+        <table class="table table-hover table-bordered" *ngIf="loaded" id="itemTable">
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Name</th>
+              <th scope="col">Category</th>
+              <th scope="col">Cost</th>
+              <th scope="col">Stock</th>
+              <th scope="col">Image</th>
+              <th scope="col">American Sign Language</th>
+              <th scope="col">Edit?</th>
+            </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor="let item of items">
+                <td>{{ item.id }}</td>
+                <td>{{ item.name }}</td>
+                <td>{{ item.category }}</td>
+                <td>{{ item.cost }}</td>
+                <td>{{ item.stock }}</td>
+                <td>{{ item.url }}</td>
+                <td>{{ item.asl }}</td>
+                <td class="tg-buh4"><i class="fa fa-pencil-square-o" title="edit item"
+                  (click)="switch(item)"aria-hidden="true"></i></td>
+            </tr>
+          </tbody>
+        </table>
+    </ng-container>
+
+    <ng-container *ngIf="!listingView">
+      <form class="form-signin" #userForm ="ngForm" (ngSubmit)="switch(itemModel); update(itemModel)" novalidate>
+        <img src="assets/img/cupslogo2.png" alt="Cups Logo" width="220" height="220">
+        <h1 class="h3 mb-3 font-weight-normal">Editing {{itemModel.name}} id#{{itemModel.id}} -{{itemModel.category}} </h1>
+
+        <div class="form-group">
+            <label>Item Name</label>
+            <input type="text" name="fName" class="form-control" 
+            #name="ngModel" placeholder="{{itemModel.name}}" required autofocus [(ngModel)]="itemModel.name">
+        </div>
+    
+        <!-- <div class="form-group">
+            <label for="categories">Item Category</label>
+            <input type="text" name="category" class="form-control" 
+            #name="ngModel" placeholder="{{itemModel.category}}" required autofocus [(ngModel)]="itemModel.category">
+        </div> -->
+    
+        <div class="form-group">
+            <label>Item Cost</label>
+            <input type="text" name="cost" class="form-control" 
+            #name="ngModel" placeholder="{{itemModel.cost}}" required autofocus [(ngModel)]="itemModel.cost">
+        </div>
+    
+        <div class="form-group">
+            <label>Item Stock</label>
+            <input type="text" name="stock" class="form-control" 
+            #name="ngModel" placeholder="{{itemModel.stock}}" required autofocus [(ngModel)]="itemModel.stock">
+        </div>
+    
+        <div class="form-group">
+            <label>Item URL</label>
+            <input type="text" name="url" class="form-control" 
+            #name="ngModel"  required autofocus placeholder="{{itemModel.url}}" [(ngModel)]="itemModel.url">
+        </div>
+    
+            <div class="form-group">
+            <label>Item ASL</label>
+            <input type="text" name="asl" class="form-control" 
+            #name="ngModel"  required autofocus [(ngModel)]="itemModel.asl" placeholder="{{itemModel.asl}}">
+        </div>
+    
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Update Item</button>
+      </form> 
+    </ng-container>
