@@ -66,12 +66,18 @@ export class ItemService {
    }
 
    updateItem (item: Item): Observable<any> {
-    return this.http.put(this.itemUrl, Item, this.httpOptions).pipe(
-    tap(_ => this.log(`updated Item id=${item.id}`)),
-    catchError(this.handleError<any>('updateItem'))
+      return this.http.put(this.itemUrl, item, this.httpOptions).pipe(
+      tap(_ => this.log(`updated Item id=${item.id}`)),
+      catchError(this.handleError<any>('updateItem',))
     );
     }
 
+    // updateItem (item: Item): Observable<any> {
+    //   return this.http.put<Item>(this.itemUrl, item, this.httpOptions).pipe(
+    //   tap(_ => this.log(`updated Item id=${item.id}`)),
+    //   catchError(this.handleError('updateItem',item))
+    //   );
+    //   }
    
 
     getItem(id: Number): Observable<Item> {

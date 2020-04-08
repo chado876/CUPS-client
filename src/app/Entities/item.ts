@@ -1,9 +1,9 @@
 export class Item {
       name: String; 
       category: String; 
-      cost: Number; 
-      stock: Number; 
-      id: Number = 0; 
+      cost:  number; 
+      stock:  number; 
+      id:  number = 0; 
       url: String; 
       asl: String
 

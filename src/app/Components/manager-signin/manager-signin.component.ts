@@ -13,23 +13,23 @@ import { HttpClient } from '@angular/common/http';
 
 export class ManagerSigninComponent{
 
-  credentials = {id: '', password: ''};
+  // credentials = {id: '', password: ''};
 
-  login() {
-    this.app.authenticate(this.credentials, () => {
-        this.router.navigateByUrl('/');
-    });
-    return false;
-  }
+  // login() {
+  //   this.app.authenticate(this.credentials, () => {
+  //       this.router.navigateByUrl('/');
+  //   });
+  //   return false;
+  // }
 
 
   constructor(private app: ManagerService, private http: HttpClient, private router: Router) {
     this.app.authenticate(undefined, undefined);
   }
-  logout() {
-    this.http.post('logout', {}).finally(() => {
-        this.app.authenticated = false;
-        this.router.navigateByUrl('/login');
-    }).subscribe();
-  }
+  // logout() {
+  //   this.http.post('logout', {}).finally(() => {
+  //       this.app.authenticated = false;
+  //       this.router.navigateByUrl('/login');
+  //   }).subscribe();
+  // }
 }

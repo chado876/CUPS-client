@@ -22,7 +22,7 @@ export class CustomerPageComponent implements OnInit {
   loaded:boolean=false;
 
   customerModel = new Customer({id: 96,d_id: 'pword',fname: 'John',lname:'Doe',recording: 'rec.mp3', image: 'img.jpg', balance:500.00});
-
+ 
   constructor(private itemService: ItemService) {}
 
   // Push a search term into the observable stream.
@@ -65,5 +65,13 @@ export class CustomerPageComponent implements OnInit {
     
   }
  
- 
+  update(order: Item){
+    order.stock = order.stock - 1;
+    this.itemService.updateItem(order).subscribe();
+    console.log(order);
+    this.itemService.addItem(order)
+        .subscribe(order => {
+          this.item.push(order);
+        });
 } 
+}

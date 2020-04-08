@@ -9,16 +9,16 @@ import { tap, catchError } from 'rxjs/operators';
 })
 export class LogInService {
 
-  private customerUrl = 'http://localhost:8090/api/customerlogin';
+  // private customerUrl = 'http://localhost:8090/api/customerlogin';
 
-  httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json','Authorization':'Bearer '+'bymdot97u8vp' })
-  };
+  // httpOptions = {
+  //   headers: new HttpHeaders({ 'Content-Type': 'application/json','Authorization':'Bearer '+'bymdot97u8vp' })
+  // };
 
-  constructor(
-    private http: HttpClient
-  ) { }
+  // constructor(
+  //   private http: HttpClient
+  // ) { }
 
-    login(customer: Customer, digitalIDType: String): Observable<Customer> 
+  //   login(customer: Customer, digitalIDType: String): Observable<Customer> 
     
 }

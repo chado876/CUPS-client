@@ -16,6 +16,7 @@
           <p>ASL: {{item.asl}}</p>
     </div>
   </div> -->
+<!-- 
 
   <div  class="row">
     <div *ngFor="let item of items" class="col-sm-6">
@@ -28,22 +29,61 @@
                 <img src="{{item.url}}" class="card-img-middle" height="240" width="240">
                 <div class="middle">
                   <div class="button"><button>Click here</button></div>
-              <!-- <img src="{{item.asl}}" class="card-img-middle" height="240" width="240"> -->
+              <img src="{{item.asl}}" class="card-img-middle" height="240" width="240">
               </div>              
-            
             </div>
             <div class="card-footer text-muted">
               {{item.stock}}
             </div>
           </div>
           <br><br>
-          <p>ASL: {{item.asl}}</p>
+    </div>
+
+    <div  class="col-sm-6">
+      <div class="card text-center" style="width:300px"> 
+        <div class="card-header">
+          American Sign Language For {{item.name}}
+        </div>
+        <div class="card-body">
+          <img src="{{item.asl}}" class="card-img-middle" height="240" width="240" >   
+        </div>
+      </div>
+      <br><br>
+    </div>
+    
+  </div> -->
+
+  <div  *ngFor="let item of items" class="row">
+    <div  class="col-sm-6">
+        <div class="card text-center" style="width:300px">
+            <div class="card-header">
+              {{item.name}} ({{item.category}})
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">{{item.cost}}</h5>
+              <img src="{{item.url}}" class="card-img-middle" height="240" width="240">
+            </div>
+            <div class="card-footer text-muted">
+              {{item.stock}} left
+            </div>
+          </div>
+          <br><br>
+    </div>
+
+    
+    <div  class="col-sm-6">
+    <div class="card text-center" style="width:300px"> 
+      <div class="card-header">
+        American Sign Language For {{item.name}}
+      </div>
+      <div class="card-body">
+        <img src="{{item.asl}}" class="card-img-middle" height="240" width="240" >   
+      </div>
+      <br>
+      <button type="button" class="btn btn-primary btn-lg">Order</button>
     </div>
   </div>
-
-
-  
-  
+</div>
 
 
   
