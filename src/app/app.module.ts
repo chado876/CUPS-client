@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule }   from '@angular/forms';
+import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
 import {ShoppingCartModule} from 'ng-shopping-cart'; // <-- Import the module class
 import { HttpClientModule }    from '@angular/common/http';
 
@@ -13,7 +13,7 @@ import { HomepageComponent } from './Components/homepage/homepage.component';
 import { FeaturetteComponent } from './Components/featurette/featurette.component';
 import { CustomerSigninComponent } from './Components/customer-signin/customer-signin.component';
 import { CustomerSignupComponent } from './Components/customer-signup/customer-signup.component';
-import { ManagerSigninComponent } from './Components/manager-signin/manager-signin.component';
+import { ManagerSignInComponent } from './Components/manager-signin/manager-signin.component';
 import { ManagerpageComponent } from './Components/managerpage/managerpage.component';
 import { ManagerSidebarComponent } from './Components/manager-sidebar/manager-sidebar.component';
 import { ItemlistingComponent } from './Components/itemlisting/itemlisting.component';
@@ -27,6 +27,7 @@ import { EditItemPageComponent } from './Components/edit-item-page/edit-item-pag
 import { EditpageComponent } from './Components/editpage/editpage.component';
 import { DeleteItemComponent } from './Components/delete-item/delete-item.component';
 import { CoffeeanimationComponent } from './Components/coffeeanimation/coffeeanimation.component';
+import { OrderComponent } from './Entities/order/order.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,7 @@ import { CoffeeanimationComponent } from './Components/coffeeanimation/coffeeani
     FeaturetteComponent,
     CustomerSigninComponent,
     CustomerSignupComponent,
-    ManagerSigninComponent,
+    ManagerSignInComponent,
     ManagerpageComponent,
     ManagerSidebarComponent,
     ItemlistingComponent,
@@ -51,6 +52,7 @@ import { CoffeeanimationComponent } from './Components/coffeeanimation/coffeeani
     EditpageComponent,
     DeleteItemComponent,
     CoffeeanimationComponent,
+    OrderComponent,
     
     
   ],
@@ -59,15 +61,8 @@ import { CoffeeanimationComponent } from './Components/coffeeanimation/coffeeani
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ShoppingCartModule.forRoot({ // <-- Add the cart module to your root module
-      //itemType: MyCartItemClass, // <-- Configuration is optional
-      serviceType: 'localStorage',
-      serviceOptions: {
-        storageKey: 'NgShoppingCart',
-        clearOnError: true
-      }
-    }),
     ShoppingCartModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

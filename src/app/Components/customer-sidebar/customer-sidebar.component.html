@@ -1,48 +1,79 @@
 <style>
-    .bd-placeholder-img {
-      font-size: 1.125rem;
-      text-anchor: middle;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
-    }
+  .bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
 
-    @media (min-width: 768px) {
-      .bd-placeholder-img-lg {
-        font-size: 3.5rem;
-      }
+  @media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+      font-size: 3.5rem;
     }
-  </style>
+  }
+</style>
 
 <div class="container-fluid">
-    <div class="row">
-      <nav class="col-md-2 d-none d-md-block bg-light sidebar">
-        <div class="sidebar-sticky">
-          <ul class="nav flex-column">
+  <div class="row">
+    <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+      <div class="sidebar-sticky">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">
+              <span data-feather="home"></span>
+              Dashboard <span class="sr-only">(current)</span>
+            </a>
+            
             <li class="nav-item">
-              <a class="nav-link active" routerLink = "../customer-page">
-                <span data-feather="home"></span>
-                Dashboard <span class="sr-only">(current)</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" routerLink = "../order-page">
-                <i class="fa fa-list" aria-hidden="true"></i>
-                Order Item
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">
-                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                Checkout
-              </a>
-            </li>
-           
-          </ul>
-  
+              <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+                <span>Categories</span>
+                <a class="d-flex align-items-center text-muted" href="#" aria-label="Add a new report">
+                  <span data-feather="plus-circle"></span>
+                </a>
+              </h6>
+            
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink = "../order-page">
+              <i class="fa fa-coffee"></i>
+              Beverages
+            </a>
+          </li> 
+          <li class="nav-item">
+            <a class="nav-link" routerLink = "../order-page">
+              <i class="fa fa-birthday-cake" aria-hidden="true"></i>
+              Snacks
+            </a>
+          </li> 
+          <li class="nav-item">
+            <a class="nav-link" routerLink = "../order-page">
+              <i class="fa fa-cutlery" aria-hidden="true"></i>
+              Daily Surprise
+            </a> 
+          </li> 
           
-        </div>
-      </nav>
-  
-      
+          <!-- <br /> -->
+          <hr align="left" width="100%" />
+
+          <li class="nav-item">
+            <a class="nav-link" routerLink = "../order-page">
+              <i class="fa fa-list" aria-hidden="true"></i>
+              Order Item
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+              Checkout 
+            </a>
+         
+         
+        </ul>
+
+        
+      </div>
+    </nav>
+
+    

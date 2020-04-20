@@ -11,7 +11,10 @@ import { HttpClient } from '@angular/common/http';
 })
 
 
-export class ManagerSigninComponent{
+
+export class ManagerSignInComponent {
+
+  credentials = new Manager({mID:'CHAD', password:'password'});
 
   // credentials = {id: '', password: ''};
 
@@ -23,9 +26,11 @@ export class ManagerSigninComponent{
   // }
 
 
-  constructor(private app: ManagerService, private http: HttpClient, private router: Router) {
-    this.app.authenticate(undefined, undefined);
+  constructor() {
+
   }
+
+   
   // logout() {
   //   this.http.post('logout', {}).finally(() => {
   //       this.app.authenticated = false;
@@ -33,3 +38,4 @@ export class ManagerSigninComponent{
   //   }).subscribe();
   // }
 }
+

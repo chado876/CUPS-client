@@ -62,6 +62,16 @@ export class CustomerPageComponent implements OnInit {
       // switch to new search observable each time the term changes
       switchMap((term: string) => this.itemService.searchItem(term)),
     );
+
+
+    this.itemService
+    .getAll()
+    .subscribe(data =>{
+      this.items = data;
+    },error=>{
+      console.error(error)
+      window.alert("We were unable to retrieve your items at this time")
+    });
     
   }
  
@@ -74,4 +84,13 @@ export class CustomerPageComponent implements OnInit {
           this.item.push(order);
         });
 } 
+
+items:Item[]=[];
+
+
+getBeverages(){
+  let beverages = this.items.filter(beverage => beverage.category === 'Beverage');
+  return beverages;
+}
+
 }

@@ -22,6 +22,42 @@
     <app-itemlisting></app-itemlisting>
 </div>
 
+<div>
+       <!-- Wrap two standard cards -->
+       <div class="row" >
+        <div class="col-sm-6" *ngFor="let beverage of getBeverages()">
+          <figure class="card card-flip">
+          
+        <div class="card text-center" style="width:300px">
+          <div class="card-header">
+            {{beverage.name}} ({{beverage.category}})
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">${{beverage.cost}}</h5>
+              <div class="inner">
+            <img src="{{beverage.url}}" class="card-img-middle" height="240" width="240">
+              </div>
+          </div>
+          <div class="card-footer text-muted">
+            {{beverage.stock}} left
+          </div>
+        </div>
+          
+        <div id = "card" class="card text-center" style="width:300px"> 
+          <div class="card-header">
+            American Sign Language For {{beverage.name}}
+          </div>
+          <div class="card-body">
+            <img src="{{beverage.asl}}" class="card-img-middle" height="240" width="240" >   
+          </div>
+        </div>
+       </figure>
+       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       <button type="button" class="btn btn-primary btn-lg">Add to Cart<i class="fa fa-shopping-cart"></i></button>
+       <br><br><br>
+       </div>
+       </div>
+</div>
 <div id="searchContent" *ngIf="loaded"> 
   
 <div  class="row">

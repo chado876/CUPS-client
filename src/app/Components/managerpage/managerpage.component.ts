@@ -7,14 +7,20 @@ import { HttpClient } from '@angular/common/http';
   templateUrl: './managerpage.component.html',
   styleUrls: ['./managerpage.component.scss']
 })
-export class ManagerpageComponent implements OnInit {
+export class ManagerpageComponent  {
 
-  constructor(private app: ManagerService, private http: HttpClient) {
+
+  constructor() {
+    // this.authService.isAuthenticated.subscribe(
+    //   (isAuthenticated: boolean)  => this.isAuthenticated = isAuthenticated
+    // );
   }
-  
-  authenticated() { return this.app.authenticated; }
 
-  ngOnInit() {
-  }
+    // async ngOnInit() {
+    //   this.isAuthenticated = await this.authService.checkAuthenticated();
+    // }
 
+    // logout() {
+    //   this.authService.logout('/');
+    // }
 }

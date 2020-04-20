@@ -68,18 +68,18 @@ switch(item: Item){
   // }
 }
 
-// update(item: Item){
-//   this.itemModel = item;
-//   this.itemService.updateItem(item).subscribe();
-//   console.log(item);
-//   this.itemService.addItem(item)
-//       .subscribe(item => {
-//         this.items.push(item);
-//       });
-// }
-
 update(item: Item){
   this.itemModel = item;
   this.itemService.updateItem(item).subscribe();
+  console.log(item);
+  this.itemService.addItem(item)
+      .subscribe(item => {
+        this.items.push(item);
+      });
 }
+
+// update(item: Item){
+//   this.itemModel = item;
+//   this.itemService.updateItem(item).subscribe();
+// }
 }

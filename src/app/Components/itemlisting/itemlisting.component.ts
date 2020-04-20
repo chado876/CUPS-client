@@ -34,6 +34,11 @@ export class ItemlistingComponent implements OnInit{
 
     }
 
+    
+    getBeverages(){
+      let beverages = this.items.filter(beverage => beverage.category === 'Beverage');
+      return beverages;
+    }
 
 }
 

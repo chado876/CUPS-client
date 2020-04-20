@@ -1,59 +1,4 @@
-  <!-- <div  class="row">
-    <div *ngFor="let item of showItems()" class="col-sm-6">
-        <div class="card text-center" style="width:300px">
-            <div class="card-header">
-              {{item.name}} ({{item.category}})
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">{{item.cost}}</h5>
-              <img src="{{item.url}}" class="card-img-middle" height="240" width="240">
-            </div>
-            <div class="card-footer text-muted">
-              {{item.stock}}
-            </div>
-          </div>
-          <br><br>
-          <p>ASL: {{item.asl}}</p>
-    </div>
-  </div> -->
-<!-- 
-
-  <div  class="row">
-    <div *ngFor="let item of items" class="col-sm-6">
-        <div class="card text-center" style="width:300px">
-            <div class="card-header">
-              {{item.name}} ({{item.category}})
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">{{item.cost}}</h5>
-                <img src="{{item.url}}" class="card-img-middle" height="240" width="240">
-                <div class="middle">
-                  <div class="button"><button>Click here</button></div>
-              <img src="{{item.asl}}" class="card-img-middle" height="240" width="240">
-              </div>              
-            </div>
-            <div class="card-footer text-muted">
-              {{item.stock}}
-            </div>
-          </div>
-          <br><br>
-    </div>
-
-    <div  class="col-sm-6">
-      <div class="card text-center" style="width:300px"> 
-        <div class="card-header">
-          American Sign Language For {{item.name}}
-        </div>
-        <div class="card-body">
-          <img src="{{item.asl}}" class="card-img-middle" height="240" width="240" >   
-        </div>
-      </div>
-      <br><br>
-    </div>
-    
-  </div> -->
-
-  <div  *ngFor="let item of items" class="row">
+  <!-- <div  *ngFor="let item of items" class="row">
     <div  class="col-sm-6">
         <div class="card text-center" style="width:300px">
             <div class="card-header">
@@ -61,7 +6,9 @@
             </div>
             <div class="card-body">
               <h5 class="card-title">{{item.cost}}</h5>
+                <div class="inner">
               <img src="{{item.url}}" class="card-img-middle" height="240" width="240">
+                </div>
             </div>
             <div class="card-footer text-muted">
               {{item.stock}} left
@@ -69,23 +16,81 @@
           </div>
           <br><br>
     </div>
-
     
     <div  class="col-sm-6">
-    <div class="card text-center" style="width:300px"> 
+    <div id = "card" class="card text-center" style="width:300px"> 
       <div class="card-header">
         American Sign Language For {{item.name}}
       </div>
       <div class="card-body">
         <img src="{{item.asl}}" class="card-img-middle" height="240" width="240" >   
       </div>
-      <br>
       <button type="button" class="btn btn-primary btn-lg">Order</button>
     </div>
   </div>
-</div>
+</div> -->
 
 
-  
 
+     <!-- Wrap two standard cards -->
+     <div class="row" >
+      <div class="col-sm-6" *ngFor="let item of items">
+        <figure class="card card-flip">
+        
+      <div class="card text-center" style="width:300px">
+        <div class="card-header">
+          {{item.name}} ({{item.category}})
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">${{item.cost}}</h5>
+            <div class="inner">
+          <img src="{{item.url}}" class="card-img-middle" height="240" width="240">
+            </div>
+        </div>
+        <div class="card-footer text-muted">
+          {{item.stock}} left
+        </div>
+      </div>
+        
+      <div id = "card" class="card text-center" style="width:300px"> 
+        <div class="card-header">
+          American Sign Language For {{item.name}}
+        </div>
+        <div class="card-body">
+          <img src="{{item.asl}}" class="card-img-middle" height="240" width="240" >   
+        </div>
+      </div>
+     </figure>
+     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+     <button type="button" class="btn btn-primary btn-lg">Add to Cart<i class="fa fa-shopping-cart"></i></button>
+     <br><br><br>
+     </div>
+     </div>
 
+            <!-- Beverage -->
+       <div class="row" >
+        <div class="col-sm-6" *ngFor="let beverage of getBeverages()">
+          <figure class="card card-flip">
+          
+        <div class="card text-center" style="width:300px">
+          <div class="card-header">
+            {{beverage.name}} ({{beverage.category}})
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">${{beverage.cost}}</h5>
+              <div class="inner">
+            <img src="{{beverage.url}}" class="card-img-middle" height="240" width="240">
+              </div>
+          </div>
+          <div class="card-footer text-muted">
+            {{beverage.stock}} left
+          </div>
+        </div>
+          
+        <div id = "card" class="card text-center" style="width:300px"> 
+          <div class="card-header">
+            American Sign Language For {{beverage.name}}
+          </div>
+          <div class="card-body">
+            <img src="{{beverage.asl}}" class="card-img-middle" height="240" width="240" >   
+          </div>
