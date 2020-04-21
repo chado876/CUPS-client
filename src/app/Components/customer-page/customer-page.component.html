@@ -1,63 +1,41 @@
 <app-customer-sidebar></app-customer-sidebar>
 
 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
-    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-      <h1 class="h2">Customer Page</h1>
+  <!-- Search form -->
+  <h3 class="h2">Customer Page</h3> 
+
+<div class="input-group md-form form-sm form-1 pl-0">
+    
+    <div class="input-group-prepend">
+      <button class="input-group-text purple lighten-3" id="basic-text1" id="searchbutton" (click)="search(searchBox2.value)"><i  class="fa fa-search text-white"
+          aria-hidden="true"></i></button>
     </div>
-    <h4 class="align">Welcome {{customerModel.fname}}</h4>
-    <br>
-<!-- Search form -->
-<br><br>
-<form class="form-inline">
+    <input class="form-control my-0 py-1" #searchBox2 id="searchbox2" type="text" placeholder="Search"
+    aria-label="Search">
+  </div>
+
+<!-- <br><br> -->
+<!-- <div id="search1"> 
   <button id="searchbutton" (click)="search(searchBox2.value)"><i class="fa fa-search" aria-hidden="true"></i></button>
   <input class="form-control form-control-sm ml-3 w-75" #searchBox2 id="searchbox2" type="text" placeholder="Search"
     aria-label="Search">
-</form>
+  </div> -->
+   
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    
+    </div>
+    
+    <h4 class="align">Welcome {{customerModel.fname}}</h4>
+    <br>
+
 
 <div id="search-component">
-  <h4><label for="search-box">Item Search</label></h4>
-</div>
+  <h3><label for="search-box"></label></h3>
 
 <div id="Item Listing" *ngIf ="!loaded">
     <app-itemlisting></app-itemlisting>
 </div>
 
-<div>
-       <!-- Wrap two standard cards -->
-       <div class="row" >
-        <div class="col-sm-6" *ngFor="let beverage of getBeverages()">
-          <figure class="card card-flip">
-          
-        <div class="card text-center" style="width:300px">
-          <div class="card-header">
-            {{beverage.name}} ({{beverage.category}})
-          </div>
-          <div class="card-body">
-            <h5 class="card-title">${{beverage.cost}}</h5>
-              <div class="inner">
-            <img src="{{beverage.url}}" class="card-img-middle" height="240" width="240">
-              </div>
-          </div>
-          <div class="card-footer text-muted">
-            {{beverage.stock}} left
-          </div>
-        </div>
-          
-        <div id = "card" class="card text-center" style="width:300px"> 
-          <div class="card-header">
-            American Sign Language For {{beverage.name}}
-          </div>
-          <div class="card-body">
-            <img src="{{beverage.asl}}" class="card-img-middle" height="240" width="240" >   
-          </div>
-        </div>
-       </figure>
-       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-       <button type="button" class="btn btn-primary btn-lg">Add to Cart<i class="fa fa-shopping-cart"></i></button>
-       <br><br><br>
-       </div>
-       </div>
-</div>
 <div id="searchContent" *ngIf="loaded"> 
   
 <div  class="row">
@@ -96,5 +74,3 @@
     </div>
 </div> 
 </div> 
-
-  
