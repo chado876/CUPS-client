@@ -1,0 +1,85 @@
+<style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+  </style>
+
+<div class="container-fluid">
+    <div class="row">
+      <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+        <div class="sidebar-sticky">
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link active" routerLink = "../managerpage">
+                <span data-feather="home"></span>
+                Dashboard <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink = "../add-item-page">
+                <i class="fa fa-plus" aria-hidden="true"></i>
+                Add Item
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="../edit-item-page">
+                <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                Edit Item
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink = "../delete-item">
+                <span data-feather="users"></span>
+                <i class="fa fa-times" aria-hidden="true"></i>
+                Delete Item
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <span data-feather="bar-chart-2"></span>
+                Current Orders (TBD)
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <span data-feather="layers"></span>
+                Order History (TBD)
+              </a>
+            </li>
+          </ul>
+  
+          <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+            <span>View Charts</span>
+            <a class="d-flex align-items-center text-muted" href="#" aria-label="Add a new report">
+              <span data-feather="plus-circle"></span>
+            </a>
+          </h6>
+              <ul>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="bar-chart-2"></span>
+              Total Profits Chart (TBD)
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="layers"></span>
+              Total Sales Chart (TBD)
+            </a>
+          </li>
+        </ul>
+        </div>
+      </nav>
+  
+      
