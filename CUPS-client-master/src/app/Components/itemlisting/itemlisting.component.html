@@ -1,0 +1,69 @@
+  <!-- <div  *ngFor="let item of items" class="row">
+    <div  class="col-sm-6">
+        <div class="card text-center" style="width:300px">
+            <div class="card-header">
+              {{item.name}} ({{item.category}})
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">{{item.cost}}</h5>
+                <div class="inner">
+              <img src="{{item.url}}" class="card-img-middle" height="240" width="240">
+                </div>
+            </div>
+            <div class="card-footer text-muted">
+              {{item.stock}} left
+            </div>
+          </div>
+          <br><br>
+    </div>
+    
+    <div  class="col-sm-6">
+    <div id = "card" class="card text-center" style="width:300px"> 
+      <div class="card-header">
+        American Sign Language For {{item.name}}
+      </div>
+      <div class="card-body">
+        <img src="{{item.asl}}" class="card-img-middle" height="240" width="240" >   
+      </div>
+      <button type="button" class="btn btn-primary btn-lg">Order</button>
+    </div>
+  </div>
+</div> -->
+
+
+
+     <!-- Wrap two standard cards -->
+     <div class="row" >
+      <div class="col-sm-6" *ngFor="let item of items">
+        <figure class="card card-flip">
+        
+      <div class="card text-center" style="width:300px">
+        <div class="card-header">
+          {{item.name}} ({{item.category}})
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">${{item.cost}}</h5>
+            <div class="inner">
+          <img src="{{item.url}}" class="card-img-middle" height="240" width="240">
+            </div>
+        </div>
+        <div class="card-footer text-muted">
+          {{item.stock}} left
+        </div>
+      </div>
+        
+      <div id = "card" class="card text-center" style="width:300px"> 
+        <div class="card-header">
+          American Sign Language For {{item.name}}
+        </div>
+        <div class="card-body">
+          <img src="{{item.asl}}" class="card-img-middle" height="240" width="240" >   
+        </div>
+      </div>
+     </figure>
+     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+     <button id="addbtn" type="button" class="btn btn-primary btn-lg" (click)="addtoCart(item)">Add to Cart<i class="fa fa-shopping-cart" ></i></button>
+     <br><br><br>
+     </div>
+     </div>
+

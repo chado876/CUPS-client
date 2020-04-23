@@ -1,0 +1,13 @@
+
+<form class="form-signin" #userForm ="ngForm"  novalidate>
+    <img src="assets/img/cupslogo2.png" alt="Cups Logo" width="220" height="220">
+    <h1 class="h3 mb-3 font-weight-normal">Manager Sign In</h1>
+
+        <input type="text" name="mID" class="form-control" 
+        #name="ngModel" placeholder="Manager ID" required autofocus [(ngModel)]="credentials.mID">
+        <input type="password" name="password" class="form-control" 
+        #name="ngModel" placeholder="Password" required autofocus [(ngModel)]="credentials.password">
+        <br>
+    <button class="btn btn-lg btn-primary btn-block" type="submit" routerLink="../managerpage">Sign In</button>
+  </form>    
+
