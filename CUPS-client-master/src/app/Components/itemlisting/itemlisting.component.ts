@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CartItem, BaseCartItem } from 'ng-shopping-cart';
 import { ItemService } from 'src/app/Services/item.service'
 import { Item } from 'src/app/Entities/item';
+import { OrderService } from 'src/app/Services/order.service';
 
 @Component({
   selector: 'app-itemlisting',
@@ -17,7 +18,9 @@ export class ItemlistingComponent implements OnInit{
   items:Item[]=[];
   
   constructor(
-    private itemService : ItemService
+    private itemService : ItemService,
+    private orderService:OrderService
+
   ) { }
   
   
@@ -34,14 +37,16 @@ export class ItemlistingComponent implements OnInit{
 
     }
 
-    itemModel = new Item({ name: 'Espresso', category:'Beverage', cost: 6.99, 
-    stock: 10, id: 10, url:'https://www.naukrinama.com/stressbuster/wp-content/uploads/2018/09/black-coffee.jpg', 
-    asl:'https://www.naukrinama.com/stressbuster/wp-content/uploads/2018/09/black-coffee.jpg'});
-
+    
+    orderList: Item [] = [];
+    
     addtoCart(item : Item){
 
       item.stock = item.stock - 1;
       this.itemService.updateItem(item).subscribe(() => console.log(item));
+      this.orderService.setOrder(item);
+      console.log(this.orderService.getOrder());
+      this.orderService.setAmt();
     }
 
 

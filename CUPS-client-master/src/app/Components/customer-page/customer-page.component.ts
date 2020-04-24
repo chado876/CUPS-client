@@ -8,6 +8,7 @@ import {
 import { Item } from 'src/app/Entities/item';
 import { ItemService } from 'src/app/Services/item.service';
 import { Customer } from 'src/app/Entities/customer';
+import { OrderService } from 'src/app/Services/order.service';
 
 
 @Component({
@@ -16,15 +17,17 @@ import { Customer } from 'src/app/Entities/customer';
   styleUrls: ['./customer-page.component.scss']
 })
 export class CustomerPageComponent implements OnInit {
+
   items$: Observable<Item[]>;
   item: Item[]; 
   private searchTerms = new Subject<string>();
   loaded:boolean=false;
 
+
   customerModel = new Customer({id: 96,d_id: 'pword',fname: 'John',lname:'Doe',recording: 'rec.mp3', image: 'img.jpg', balance:500.00});
  
-  constructor(private itemService: ItemService) {}
-
+  constructor(private itemService: ItemService,  private orderService: OrderService
+    ) {}
   // Push a search term into the observable stream.
   // search(term: string): void {
   //   this.searchTerms.next(term);
@@ -50,7 +53,10 @@ export class CustomerPageComponent implements OnInit {
     
   }
 
+  num:Number;
+
   ngOnInit(): void {
+    this.num = 0;
     this.items$ = this.searchTerms.pipe(
       // wait 300ms after each keystroke before considering the term
       debounceTime(300),
@@ -87,10 +93,12 @@ export class CustomerPageComponent implements OnInit {
 
 items:Item[]=[];
 
-
+ 
 getBeverages(){
   let beverages = this.items.filter(beverage => beverage.category === 'Beverage');
   return beverages;
 }
+
+
 
 }

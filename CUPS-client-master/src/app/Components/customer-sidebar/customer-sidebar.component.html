@@ -64,8 +64,9 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
-              <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+            <a class="nav-link" routerLink = "../order-page">
+              <i class="fa" style="font-size:24px">&#xf07a;</i>
+              <span class='badge badge-warning' id='lblCartCount'> {{ numofItems() }} </span>
               Checkout 
             </a>
          
