@@ -49,6 +49,14 @@ export class ItemlistingComponent implements OnInit{
       this.orderService.setAmt();
     }
 
+    checkItem(item:Item){
+      let inStock:boolean = true;
+      if (item.stock == 0){
+        inStock=false;
+      }
+      return inStock;
+    }
+
 
 }
 

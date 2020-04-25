@@ -12,7 +12,7 @@ export class CustomerSigninComponent implements OnInit {
 
   constructor(private customerService: CustomerService,private router: Router) {}
 
-  customerModel = new Customer({id: 96,d_id: 'pword',fname: 'John',lname:'Doe',recording: 'rec.mp3', image: 'img.jpg', balance:500.00});
+  customerModel = new Customer({id: 1,d_id: 'pword',fname: 'John',lname:'Doe',recording: 'rec.mp3', image: 'img.jpg', balance:500.00});
 
   fname:string;
   lname:string;
@@ -41,6 +41,13 @@ export class CustomerSigninComponent implements OnInit {
     this.customerService.getCustomer(customer.id).subscribe(success=>{
       if(success){
         this.auth = true;
+        this.customerService.getCustomer(customer.id).subscribe(data =>{
+          let customer2 = data;
+          this.customerService.setCustomer(customer2);
+        },error=>{
+          console.error(error)
+          window.alert("We were unable to retrieve your items at this time")
+        });
       }
     });
 

@@ -45,7 +45,7 @@
             <img src="{{item.url}}" class="card-img-middle" height="240" width="240">
           </div>
           <div class="card-footer text-muted">
-            {{item.stock}}
+            {{item.stock}} left
           </div>
         </div>
         <br><br>
@@ -62,11 +62,20 @@
             <img src="{{item.asl}}" class="card-img-middle" height="240" width="240">
             </div>
             <div class="card-footer text-muted">
-            </div>
-            <button type="button" class="btn btn-primary btn-lg" (click)="update(item)">Order</button>
-          </div>
+
           <br><br>
           
     </div>
 </div> 
+<div id="statusbtn">
+  <div *ngIf = "checkItem(item)">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   <button id="addbtn" type="button" class="btn btn-primary btn-lg" (click)="addtoCart(item)">Add to Cart<i class="fa fa-shopping-cart" ></i></button>
+  </div>
+   <div *ngIf = "!checkItem(item)">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   <button id="outbtn" type="button" class="btn btn-primary btn-lg" >Out of Stock<i class="fa fa-times" ></i></button>
+  </div>
+</div>
+
 </div> 

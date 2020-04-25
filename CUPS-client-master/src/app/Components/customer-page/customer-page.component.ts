@@ -9,6 +9,7 @@ import { Item } from 'src/app/Entities/item';
 import { ItemService } from 'src/app/Services/item.service';
 import { Customer } from 'src/app/Entities/customer';
 import { OrderService } from 'src/app/Services/order.service';
+import { CustomerService } from 'src/app/Services/customer.service';
 
 
 @Component({
@@ -24,15 +25,16 @@ export class CustomerPageComponent implements OnInit {
   loaded:boolean=false;
 
 
-  customerModel = new Customer({id: 96,d_id: 'pword',fname: 'John',lname:'Doe',recording: 'rec.mp3', image: 'img.jpg', balance:500.00});
  
-  constructor(private itemService: ItemService,  private orderService: OrderService
+  constructor(private itemService: ItemService,  private orderService: OrderService,
+    private customerService: CustomerService
     ) {}
   // Push a search term into the observable stream.
   // search(term: string): void {
   //   this.searchTerms.next(term);
     
   // }
+
 
   search(term: string): void {
     this.itemService.searchItem(term).subscribe(data =>{
@@ -100,5 +102,14 @@ getBeverages(){
 }
 
 
+checkItem(item:Item){
+  let inStock:boolean = true;
+  if (item.stock == 0){
+    inStock=false;
+  }
+  return inStock;
+}
+
+customerModel = this.customerService.getLoginCustomer();
 
 }

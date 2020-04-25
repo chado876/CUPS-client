@@ -61,8 +61,14 @@
         </div>
       </div>
      </figure>
-     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+     <div *ngIf = "checkItem(item)">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
      <button id="addbtn" type="button" class="btn btn-primary btn-lg" (click)="addtoCart(item)">Add to Cart<i class="fa fa-shopping-cart" ></i></button>
+    </div>
+     <div *ngIf = "!checkItem(item)">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+     <button id="outbtn" type="button" class="btn btn-primary btn-lg" >Out of Stock<i class="fa fa-times" ></i></button>
+    </div>
      <br><br><br>
      </div>
      </div>

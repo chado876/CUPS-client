@@ -73,7 +73,17 @@ addCustomer (customer: Customer, token : string = ""): Observable<Customer> {
     return customersApi;
    }
 
+  loginCustomer : Customer;
 
+   setCustomer(customer: Customer){
+    this.loginCustomer = customer;
+   }
+
+   getLoginCustomer(){
+     return this.loginCustomer;
+   }
+
+   
   private handleError<T> (operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
     // TODO: send the error to remote logging infrastructure
