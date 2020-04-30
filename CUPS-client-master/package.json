@@ -25,7 +25,7 @@
     "@types/jquery": "^3.3.33",
     "ejs": "^3.0.1",
     "express": "^4.17.1",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "multer": "^1.4.2",
     "ng-image-upload": "^0.1.0",
     "ng-shopping-cart": "^1.0.0",
